@@ -1,0 +1,7 @@
+1.get the clone from git 
+2.create the workspace
+3.open the project in VS
+4.open terminal
+5.type..(npm install), it may take time to install,after that
+6.type..(ng serve)
+7.go to browser,in new tab type (localhost:8080)
