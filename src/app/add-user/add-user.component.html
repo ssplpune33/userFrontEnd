@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card mt-5" style="background-color: lightgray;">
+                <div class="card-body">
+                    <form [formGroup]="userForm">
+                        <h3 class="text-center mt-2">{{title}}</h3>
+                        <div class="m-5">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name<sup class="text-danger">*</sup> :</label>
+                                    <input type="text" class="form-control" formControlName="firstName" name="firstName"
+                                        id="firstName" placeholder="Enter First Name" required pattern="[a-zA-Z][a-zA-Z ]+">
+                                    <small class="form-text text-danger text-muted"
+                                        *ngIf="userForm.controls.firstName.errors &&  userForm.controls.firstName.touched">
+                                        <span class=" error-span text-danger"
+                                            *ngIf="userForm.controls.firstName.errors.required">First Name
+                                            required
+                                            !!</span>
+                                        <span class="error-span text-danger"
+                                            *ngIf="userForm.controls.firstName.errors.pattern">Only
+                                            alphabets
+                                            allowed !! </span>
+                                    </small>
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="lastName">Last Name<sup class="text-danger">*</sup> :</label>
+                                    <input type="text" class="form-control" formControlName="lastName" name="lastName"
+                                        id="lastName" placeholder="Enter Last Name" required pattern="[a-zA-Z][a-zA-Z ]+">
+                                    <small class="form-text text-danger text-muted"
+                                        *ngIf="userForm.controls.lastName.errors &&  userForm.controls.lastName.touched">
+                                        <span class=" error-span text-danger"
+                                            *ngIf="userForm.controls.lastName.errors.required">Last Name
+                                            required
+                                            !!</span>
+                                        <span class="error-span text-danger"
+                                            *ngIf="userForm.controls.lastName.errors.pattern">Only
+                                            alphabets
+                                            allowed !! </span>
+                                    </small>
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="mobileNumber">Mobile<sup class="text-danger">*</sup> :</label>
+                                    <input type="tel" class="form-control" formControlName="mobileNumber" name="mobileNumber"
+                                        id="mobileNumber" placeholder="Enter Mobile" required>
+                                    <small class="form-text text-danger text-muted"
+                                        *ngIf="userForm.controls.mobileNumber.errors &&  userForm.controls.mobileNumber.touched">
+                                        <span class=" error-span text-danger"
+                                            *ngIf="userForm.controls.mobileNumber.errors.required">Mobile
+                                            Number required
+                                            !!</span>
+                                        <span class="error-span text-danger"
+                                            *ngIf="userForm.controls.mobileNumber.errors.pattern">Invalid
+                                            mobile number
+                                            format !! </span>
+                                    </small>
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="city">City<sup class="text-danger">*</sup> :</label>
+                                    <input type="text" class="form-control" formControlName="city" name="city" id="city"
+                                        placeholder="Enter City" required pattern="[a-zA-Z][a-zA-Z ]+">
+                                    <small class="form-text text-danger text-muted"
+                                        *ngIf="userForm.controls.city.errors &&  userForm.controls.city.touched">
+                                        <span class=" error-span text-danger"
+                                            *ngIf="userForm.controls.city.errors.required">City required
+                                            !!</span>
+                                        <span class="error-span text-danger" *ngIf="userForm.controls.city.errors.pattern">Only
+                                            alphabets
+                                            allowed !! </span>
+                                    </small>
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="dob">Birth Date<sup class="text-danger">*</sup> :</label>
+                                    <input type="date" class="form-control" formControlName="dob" name="dob" id="dob"
+                                        placeholder="Enter DOB" required>
+                                    <small class="form-text text-danger text-muted"
+                                        *ngIf="userForm.controls.dob.errors &&  userForm.controls.dob.touched">
+                                        <span class=" error-span text-danger"
+                                            *ngIf="userForm.controls.dob.errors.required">Birth Date required
+                                            !!</span>
+                                        <span class="error-span text-danger" *ngIf="userForm.controls.dob.errors.pattern">Only
+                                            alphabets
+                                            allowed !! </span>
+                                    </small>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="button" class="btn btn-danger" [disabled]="userForm.invalid"
+                                        (click)="submission()">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
